@@ -39,7 +39,7 @@ No monthly cloud bills. No vendor lock-in. Full control over the stack.
 | Component | Spec |
 |-----------|------|
 | Nodes | 5× Chromebox (Asus Chromebox 3) |
-| Firmware | [MrChromebox UEFI](https://mrchromebox.tech/) — replaces stock firmware |
+| Firmware | MrChromebox UEFI — replaces stock firmware |
 | OS | Ubuntu Server 26.04 LTS |
 | Networking | Gigabit switch, flat LAN + Tailscale overlay |
 | Storage | Per-node SSDs, pooled via Longhorn |
@@ -51,7 +51,8 @@ The Chromeboxes ship with write-protected firmware designed to only boot ChromeO
 
 This was the most hands-on part of the project — and the most satisfying.
 
-A huge thanks goes to MrChromebox and the amazing work he's done to make flashing custom firmware possible on these devices.
+**A huge thanks goes to MrChromebox and the amazing work he's done to make flashing custom firmware possible on these devices.**  
+MrChromebox — [Docs](https://docs.mrchromebox.tech/), [Custom Firmware](https://docs.mrchromebox.tech/docs/fwscript.html)
 
 ---
 
