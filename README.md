@@ -23,7 +23,7 @@ No monthly cloud bills. No vendor lock-in. Full control over the stack.
 
 | Component | Spec |
 |-----------|------|
-| Nodes | 5× Chromebox (Asus Chromebox 3 |
+| Nodes | 5× Chromebox (Asus Chromebox 3) |
 | Firmware | [MrChromebox UEFI](https://mrchromebox.tech/) — replaces stock firmware |
 | OS | Ubuntu Server 26.04 LTS |
 | Networking | Gigabit switch, flat LAN + Tailscale overlay |
@@ -81,6 +81,8 @@ Services deployed as Kubernetes workloads:
 
 Each node runs as a K3S agent registered to the control plane on node-01. Workloads are scheduled across the worker nodes by the K3S server.
 
+<img width="1443" height="288" alt="image" src="https://docs.k3s.io/img/k3s-logo-dark.svg" />
+
 ### Longhorn — Distributed Block Storage
 The hardest problem in bare-metal Kubernetes is persistent storage. Cloud providers give you a storage class out of the box; on bare metal you build it yourself.
 
@@ -88,17 +90,28 @@ The hardest problem in bare-metal Kubernetes is persistent storage. Cloud provid
 
 Lessons learned: Longhorn is sensitive to disk I/O. On slower Chromebox eMMC storage, replica sync during initial volume creation adds noticeable latency. Large and fast SSDs are strongly recommended.
 
+<img width="2510" height="1183" alt="image" src="https://github.com/user-attachments/assets/dc768668-9160-42e4-a0c6-d29ca224f39a" />
+
 ### Tailscale — Zero-Config Secure Networking
 [Tailscale](https://tailscale.com/) runs as a daemonset on my seperate networking node and creates a WireGuard-based mesh between all cluster nodes and my personal devices. This means I can reach Gitea, Grafana, and Open WebUI from my laptop anywhere in the world — no port forwarding, no exposed public IPs, no VPN server to manage.
+
+<img width="1960" height="627" alt="image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Tailscale-Logo-Black.svg/3840px-Tailscale-Logo-Black.svg.png" />
 
 ### Gitea — Self-Hosted Git
 [Gitea](https://gitea.io/) is a lightweight self-hosted Git service. It backs my personal project repos and doubles as a place to store the manifests and configs that define this cluster.
 
+<img width="2510" height="1326" alt="image" src="https://github.com/user-attachments/assets/e773a43c-de96-41d7-afae-1f49a5663ff9" />
+
 ### Grafana — Observability
 [Grafana](https://grafana.com/) with Prometheus scraping node metrics gives me dashboards for CPU, memory, disk I/O, and network across all five nodes. Watching the load shift when Ollama spins up inference on a model was one of the more satisfying moments of this build.
 
+<img width="2512" height="1230" alt="image" src="https://github.com/user-attachments/assets/c526f6e6-a256-4297-b07d-b2743325f94a" />
+
 ### Ollama + Open WebUI — Local AI Inference
 [Ollama](https://ollama.ai/) runs a quantized LLM on the cluster's available CPU resources. Open WebUI provides a ChatGPT-style browser interface that talks to the Ollama API. The model is small enough to run without a GPU — response latency is slower than cloud APIs, but the inference is entirely local, private, and free.
+
+<img width="2508" height="1318" alt="image" src="https://github.com/user-attachments/assets/43d7d94a-bed5-49f0-ba19-50ca4bced2f3" />
+
 
 ---
 
