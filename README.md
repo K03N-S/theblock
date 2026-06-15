@@ -106,7 +106,7 @@ Lessons learned: Longhorn is sensitive to disk I/O. On slower Chromebox eMMC sto
 
 **Bare metal is humbling.** Cloud Kubernetes abstracts away an enormous amount of complexity — networking, storage, node health, certificate management. Doing all of it by hand exposed exactly what those managed services are actually doing for you.
 
-**Distributed storage is hard.** Getting Longhorn stable took the most iteration of anything in this project. Understanding how replication, node failure, and volume attachment interaction was a significant learning curve.
+**Distributed storage is hard.** Getting Longhorn stable took the most iteration of anything in this project. Understanding how replication, node failure, and volume attachment interact was a significant learning curve.
 
 **Networking is everything.** K3S needs consistent node-to-node communication. Any flakiness in the LAN — a bad cable, an overloaded switch port — shows up as mysterious pod scheduling failures and etcd timeouts. I learned to diagnose network issues from Kubernetes error messages, which felt like being a forensics detective.
 
