@@ -1,6 +1,6 @@
 # 🖥️ ChromeCluster — Self-Hosted AI & DevOps Lab on Repurposed Chromeboxes
 
-> A "production-grade" Kubernetes cluster built on 5 refurbished Chromeboxes, running a full self-hosted stack — from AI inference to Git hosting to observability.
+> A homelab Kubernetes cluster built on 5 repurposed Chromeboxes, running a full self-hosted stack — from AI inference to Git hosting to monitoring.
 
 ![K3s](https://img.shields.io/badge/K3s-FFC61C?style=for-the-badge&logo=k3s&logoColor=black)
 ![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)
